@@ -60,22 +60,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
-  Deploy:
-      # The type of runner that the job will run on
-      runs-on: windows-latest
-      environment:
-        name: My-Env
-      needs: test
-      # Steps represent a sequence of tasks that will be executed as part of the job
-      steps:
-        - uses: actions/checkout@v4   
-        - name: Download a Build Artifact
-          uses: actions/download-artifact@v4.1.8
-          with:
-            # Name of the artifact to download. If unspecified, all artifacts for the run are downloaded.
-            name: Build Artifact
-            # Destination path. Supports basic tilde expansion. Defaults to $GITHUB_WORKSPACE
-            path: ${{github.workspace}}
             
                     
